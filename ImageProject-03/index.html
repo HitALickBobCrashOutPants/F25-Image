@@ -4,12 +4,25 @@
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
   </head>
   <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
-  </body>
+  <a-scene>
+
+    <a-assets>
+      <a-asset-item id="dolphin" src="assets /dolphin.obj"></a-asset-item>
+      <a-asset-item id="Dumbahhfish" src="assets /Dumbahhfish.obj"></a-asset-item>
+      <img id="sky1" src="assets /UnderwaterequirectangularEdited.jpg">
+      <img id="tex1" src="assets /dolphintexture.jpeg">
+      <img id="tex2" src="assets /fishtexture.jpg">
+    
+    </a-assets>
+    
+
+    <a-obj-model src="#dolphin" position="20 -5 -10" scale=".15 .15 .15" rotation="-45 80 25" material="shader:flat;src:#tex1"></a-obj-model>
+    <a-obj-model src="#Dumbahhfish" position="-5 5 -15" scale=".25 .25 .25" rotation="-90 -30 30" material="shader:flat;src:#tex2"></a-obj-model>
+
+    <a-sky src="#sky1"></a-sky>
+
+    <a-light type="ambient" color="#445451"></a-light>
+    <a-light light="color: #ff6000; intensity: 2; type: point"></a-light>
+  </a-scene>
+</body>
 </html>
